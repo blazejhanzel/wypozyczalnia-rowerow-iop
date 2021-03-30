@@ -1,0 +1,202 @@
+<div class="row mt-3"> 
+  <div class="col">
+
+    <div class="row">
+      <div class="col">
+      Termin wypożyczenia:
+      </div>
+    </div>
+    <div class="row mt-1">
+
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupModel">Data od</label>
+            </div>
+            <input id="datePicker3" type="date" onchange="updatePrice()" class="form-control datePicker">
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupModel">Data do</label>
+            </div>
+            <input id="datePicker4" type="date" onchange="updatePrice()" class="form-control datePicker">
+          </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input id="inputShipping" type="checkbox" oninput="refreshShippingForm()">
+              <div class="input-group">
+              </div>
+            </div>
+            <div class="input-group-append">
+              <span class="input-group-text">Dowóz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="shippingForm" class="d-none">
+      <div class="row mt-1">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Miasto:</span>
+            </div>
+            <input type="text" class="form-control" placeholder="przykładowy adres" id="dowoz_miasto">
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Ulica:</span>
+            </div>
+            <input type="text" class="form-control" placeholder="przykładowy adres" id="dowoz_ulica">
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Nr domu:</span>
+            </div>
+            <input type="text" class="form-control" placeholder="przykładowy adres" id="dowoz_nr_domu">
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-1">
+        <div class="col">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Uwagi:</span>
+            </div>
+            <input type="text" class="form-control" id="dowoz_uwagi">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col mr-3">
+
+    <div class="row">
+      Akcesoria:
+    </div>
+
+    <div class="row mt-1">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" id="akcesoria_kask_chk" onclick="updatePrice()">
+          </div>
+          <label class="input-group-text">Kask</label>
+          </div>
+        <select class="custom-select" id="akcesoria_kask">
+          <option selected value="M">Wybierz rozmiar</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" id="akcesoria_rekawiczki_chk" onclick="updatePrice()">
+          </div>
+          <label class="input-group-text">Rękawiczki</label>
+          </div>
+        <select class="custom-select" id="akcesoria_rekawiczki">
+          <option selected value="M">Wybierz rozmiar</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" id="akcesoria_ochraniacze_chk" onclick="updatePrice()">
+          </div>
+          <label class="input-group-text">Ochraniacze</label>
+          </div>
+        <select class="custom-select" id="akcesoria_ochraniacze">
+          <option selected value="M">Wybierz rozmiar</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" id="akcesoria_zbroja_chk" onclick="updatePrice()">
+          </div>
+          <label class="input-group-text">Zbroja</label>
+          </div>
+        <select class="custom-select" id="akcesoria_zbroja">
+          <option selected value="M">Wybierz rozmiar</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" id="akcesoria_gogle_chk" onclick="updatePrice()">
+          </div>
+          <label class="input-group-text">Gogle</label>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Cena:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Pobieranie danych z serwera..." id="cena_laczna" disabled>
+  </div>
+  </div>
+  <div class="col-4"></div>
+  </div>
+
+  <div class="row mt-4">
+  <div class="col">
+    <button class="btn btn-outline-danger btn-lg btn-block" id="orderButton" onclick="sendReservation(id)">Zamów</button>
+    <div id="alertNotLoggedError" class="alert alert-danger d-none" role="alert">
+      Nie można rezerwować rowerów będąc niezalogowanym.
+    </div>
+  </div>
+</div>

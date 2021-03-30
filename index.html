@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Wypożyczalnia rowerów</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/reservation.js"></script>
+    <script>validateRole();</script>
+  </head>
+  <body style="background-color:#f3f3f3;">
+    <div id="navbarPlaceholder"></div>
+
+    <div id="transactionComplete" class="alert alert-success d-none" role="alert">
+      Twoje zamówienie zostało złożone pomyślnie.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div id="alertServerWait" class="alert alert-warning" role="alert">
+      Proszę czekać... Trwa pobieranie danych z serwera.
+    </div>
+    <div id="alertDateError" class="alert alert-danger d-none" role="alert">
+      Niestety. Wybrany rower nie jest dostępny w tym terminie.
+    </div>
+
+    <div class="container-fluid">
+      <div id="filters">
+
+        <div class="row mt-3">
+          <div class="col">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupMarka">Marka</label>
+              </div>
+              <select class="custom-select" id="inputGroupMarka" oninput="loadContent()">
+                <option value="0" selected>Wszystkie</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupColor">Kolor</label>
+              </div>
+              <select class="custom-select" id="inputGroupColor" oninput="loadContent()">
+                <option value="0" selected>Wszystkie</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupType">Typ</label>
+              </div>
+              <select class="custom-select" id="inputGroupType" oninput="loadContent()">
+                <option value="0" selected>Wszystkie</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupModel">Data od</label>
+              </div>
+              <input id="datePicker1" type="date" class="form-control datePicker" onchange="loadContent()">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupModel">Data do</label>
+              </div>
+              <input id="datePicker2" type="date" class="form-control datePicker" onchange="loadContent()">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input id="inputAlgorithm" type="checkbox" class="mr-2" oninput="loadContent()">Wyświetl sugerowane dla mnie 
+                  <div id="alertOnlyLogged" class="alert-danger ml-1 d-none" role="alert">
+                    Dostępne tylko dla zalogowanych użytkowników.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="contentPlaceholder"></div>
+      <div id="reservationFormPlaceHolder" class="d-none"></div>
+    </div>
+    
+    <script>
+      placeHolders();
+      loadNavbar();
+    </script>
+  </body>
+</html>

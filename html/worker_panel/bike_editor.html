@@ -1,0 +1,119 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6 bg-white">
+    <div class="list-group" id="list"></div>
+  </div>
+  <div class="col-3"></div>
+</div>
+<div class="row d-none" id="editor">
+  <div class="col-3"></div>
+  <div class="col-6 pt-3 bg-white pb-3">
+    <h2>Edytor roweru</h2>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputId">ID roweru</label>
+        <input type="text" class="form-control" id="inputId" placeholder="unknown" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="inputImgSrc">Adres URL zdjęcia</label>
+        <input type="text" class="form-control" id="inputImgSrc" placeholder="http://ipordomain.com/path.extension">
+        <small id="helpImgSrc" class="form-text text-muted">Można również użyć serwera lokalnego.</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="inputBrand">Marka roweru</label>
+        <input type="text" class="form-control" id="inputBrand">
+      </div>
+      <div class="form-group col-6">
+        <label for="inputModel">Model roweru</label>
+        <input type="text" class="form-control" id="inputModel">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="inputSize">Rozmiar ramy</label>
+        <input type="text" class="form-control" id="inputSize">
+      </div>
+      <div class="form-group col-6">
+        <label for="inputColor">Kolor</label>
+        <input type="text" class="form-control" id="inputColor">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="inputType">Typ</label>
+        <input type="text" class="form-control" id="inputType">
+      </div>
+      <div class="form-group col-6">
+        <label for="inputSubtype">Podtyp</label>
+        <input type="text" class="form-control" id="inputSubtype">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="inputGender">Rodzaj roweru</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <select class="custom-select" id="inputGender">
+          <option value="UNI" selected>UNISEX</option>
+          <option value="MALE">MĘSKI</option>
+          <option value="FEMALE">DAMSKI</option>
+        </select>
+      </div>
+      <div class="form-group col-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input id="inputElectric" type="checkbox" class="mr-2">Elektryczny
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="inputSuspension">Zawieszenie</label>
+        <input type="text" class="form-control" id="inputSuspension">
+      </div>
+      <div class="form-group col-6">
+        <label for="inputPrice">Cena za dzień</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="inputPrice" placeholder="0.00">
+          <div class="input-group-append">
+            <span class="input-group-text">zł</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="inputDescription">Opis roweru</label>
+        <textarea class="form-control" id="inputDescription"></textarea>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="inputService">
+        <label class="form-check-label" for="inputService">
+          Rower jest obecnie serwisowany
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="inputDestroyed">
+        <label class="form-check-label" for="inputDestroyed">
+          Rower został zezłomowany
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="proceedChanges()">Zapisz zmiany</button>
+  </div>
+  <div class="col-3"></div>
+</div>

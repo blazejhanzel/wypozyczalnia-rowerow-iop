@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm navbar-light sticky-top bg-primary"><!--style="background-color: #006600;"-->
+  <div class="collapse navbar-collapse" id="navbarLeft">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a id="bikesLink" class="nav-link" href="index.html">Rowery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Kontakt</a>
+      </li>
+      <li class="nav-item">
+        <a id="userPanelLink" class="nav-link d-none" href="user_panel.html">Panel użytkownika</a>
+      </li>
+      <li class="nav-item">
+        <a id="workerPanelLink" class="nav-link d-none" href="worker_panel.html">Panel pracownika</a>
+      </li>
+      <li class="nav-item">
+        <a id="adminPanelLink" class="nav-link d-none" href="admin_panel.html">Panel administratora</a>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- <span class="navbar-brand mb-0 h1">Wypożyczalnia rowerów sp. z o.o. </span> -->
+  <img src="img/logo_tekst.png" class="img-fluid" alt="Logo">
+  <div class="collapse navbar-collapse"><!-- Wypełniacz --></div>
+
+  <form class="form-inline d-none" id="loginForm">
+    <input class="form-control mr-sm-2" id="inputLogin" placeholder="Adres e-mail">
+    <input class="form-control mr-sm-2" type="password" id="inputPassword" placeholder="Hasło">
+  </form>
+
+  <button id="loginButton" class="btn btn-outline-light my-2 my-sm-0 mr-1" onclick="expandLoginForm()">Logowanie</button>
+  <a class="btn btn-outline-light my-2 my-sm-0 ml-1" href="register.html" id="registerButton">Rejestracja</a>
+</nav>
